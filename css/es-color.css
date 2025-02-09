@@ -265,14 +265,14 @@ h6 {
     font-family: 'Open Sans', sans-serif, Arial, Helvetica;
     font-size:14px;
     font-weight:bold;
-    color:#111;
+    color:#fff;
 }
 
 
 /* Button Color */
 
 .button, input[type="submit"] {
-    border-color:#111;
+    border-color:#fff;
 }
 
 

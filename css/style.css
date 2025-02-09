@@ -21,7 +21,7 @@
 - 6.2 Testimonials
 - 6.3 Gallery
 - 6.4 Video
-- 6.5 Clients
+- 6.5 contact
 - 6.6 Pricing Table
 7. Footer
 
@@ -88,6 +88,13 @@ figure {
     pointer-events: none;
 }
 
+.page-border div {
+    position: fixed;
+    background: #ccc;
+    z-index: 9999;
+    animation: fadeIn 2s ease-out both;
+}
+
 .page-border .bottom-border, .page-border .left-border, .page-border .right-border, .page-border .top-border {
     background: #f3f3ef;
     position: fixed;
@@ -113,26 +120,46 @@ figure {
 
 .page-border .top-border {
     top: 0;
+    animation-name: fadeInDown;
 }
 
 .page-border .right-border {
     right: 0;
+    animation-name: fadeInRight;
 }
 
 .page-border .bottom-border {
     bottom: 0;
+    animation-name: fadeInUp;
 }
 
 .page-border .left-border {
     left: 0;
+    animation-name: fadeInLeft;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateY(0px); }
+    to { opacity: 1; transform: translateY(-20px); }
+}
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateY(0px); }
+    to { opacity: 1; transform: translateY(20px); }
 }
 
 #wrapper {
-    margin:0 15px;
+    margin: 0 15px;
     padding: 15px 0;
     position: relative;
 }
-
 
 /* --------- 1.1 Input Elements ---------- */
 
@@ -216,7 +243,7 @@ section {
     padding: 20px;
 }
 
-#clients .col-2-3 [class*='col-'] {
+#contact .col-2-3 [class*='col-'] {
     padding: 0;
 }
 
@@ -302,7 +329,8 @@ section {
 /* --------- 2.1 Header --------- */
 
 #header {
-    height: 71px !important;
+    height: 130px;
+    background: #fff;
     overflow: visible;
     z-index: 9999;
     width: 100%;
@@ -327,11 +355,18 @@ section {
     margin: 0;
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 16px;
+}
+
 /* --------- 2.2 Logo ---------- */
 
 #logo {
     float: left;
-    height: 71px;
+    height: 100px;
     line-height: 66px;
     margin-right: 15px;
 }
@@ -353,7 +388,7 @@ section {
 }
 
 #logo img {
-    max-height: 45px;
+    max-height: 100px;
     vertical-align: middle;
     margin-right: 15px;
 }
@@ -406,7 +441,7 @@ section {
 
 .play-icon {
     display: inline-block;
-    font-size: 0px;
+    font-size: 0;
     cursor: pointer;
     margin: 45px auto;
     width: 110px;
@@ -430,7 +465,7 @@ section {
 }
 
 .play-icon:before {
-    font-family: 'fontawesome';
+    font-family: 'fontawesome', sans-serif;
     content: '\f144';
     speak: none;
     font-size: 74px;
@@ -490,8 +525,6 @@ section {
 }
 
 #header nav a {
-    height: 71px;
-    line-height: 71px;
     display: block;
     padding: 0 10px;
 }
@@ -508,7 +541,7 @@ section {
 
 #header.nav-solid {
     background: #fff;
-    box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.2);
     position: fixed !important;
     left:0;
 }
@@ -538,7 +571,7 @@ section {
 
 #header.nav-solid .social-icons a:hover {
     opacity: 1;
-    color: #e4473c;
+    color: #00964D;
 }
 
 /* Responsive Nav Styling */
@@ -566,7 +599,7 @@ section {
 }
 
 #nav-trigger span:after {
-    font-family: "fontAwesome";
+    font-family: "fontAwesome", sans-serif;
     display: inline-block;
     width: 38px;
     height: 71px;
@@ -645,7 +678,6 @@ nav#nav-mobile a {
     width: 100%;
     height: auto;
     line-height: normal;
-    display: block;
     border-bottom: none !important;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
@@ -835,7 +867,7 @@ h6 {
 /* Icon Left*/
 
 .icon-left .icon {
-    left: 15;
+    left: 15px;
 }
 
 .icon-left .icon-block-description {
@@ -845,7 +877,7 @@ h6 {
 /* Icon Right */
 
 .icon-right .icon {
-    right: 15;
+    right: 15px;
 }
 
 .icon-right .icon-block-description {
@@ -1115,7 +1147,7 @@ blockquote {
         cursor: pointer;
         text-align: center;
         color: #fff;
-        font-family: "fontawesome";
+        font-family: "fontawesome", sans-serif;
         font-size: 22px;
         opacity: 0.5;
         -webkit-transition: all 0.3s ease-out;
@@ -1164,7 +1196,7 @@ blockquote {
 @media all {
     .featherlight-next,
     .featherlight-previous {
-        font-family: "fontawesome";
+        font-family: "fontawesome", sans-serif;
         font-size: 22px;
         display: block;
         position: absolute;
@@ -1354,7 +1386,7 @@ blockquote {
 }
 
 #slvj-close-icon:before {
-    font-family: "fontawesome";
+    font-family: "fontawesome", sans-serif;
     color: #fff;
     content: '\f00d';
     font-size: 22px;
@@ -1377,9 +1409,9 @@ blockquote {
     cursor: pointer;
 }
 
-/* --------- 6.6 Clients ---------- */
+/* --------- 6.6 contact ---------- */
 
-#clients a {
+#contact a {
     display: block;
     text-align: center;
     position: relative;
@@ -1388,16 +1420,114 @@ blockquote {
     color: #fff;
 }
 
-#clients img {
+#contact img {
     display: inline-block;
     padding: 15px 25px;
+}
+
+/* Contact Section */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #00964D;
+    box-shadow: 0 0 0 3px rgba(228, 71, 60, 0.2);
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: #00964D;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+    background: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 150, 77, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .client-overlay {
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
-    top;
-    0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -1410,7 +1540,7 @@ blockquote {
     transition: all 0.3s ease-out;
 }
 
-#clients a:hover .client-overlay {
+#contact a:hover .client-overlay {
     opacity: 1;
 }
 
@@ -1428,7 +1558,7 @@ blockquote {
 .pricing-block-content {
     background: #fff;
     padding: 25px 0 25px 0;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
     transition: all 0.2s ease-in-out 0s;
     position: relative;
     border: 10px solid #fff;
@@ -1486,7 +1616,6 @@ blockquote {
 .pricing  p {
     font-style:italic;
     color:#b4b4b4;
-    line-height:auto;
     margin:0;
 }
 
@@ -1541,7 +1670,7 @@ blockquote {
 
 #scrollUp:before {
     background: #ccc;
-    font-family: "fontawesome";
+    font-family: "fontawesome", sans-serif;
     font-size: 2.4em;
     font-style: normal;
     font-weight: normal;
@@ -2327,6 +2456,22 @@ blockquote {
 
 }
 
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-form,
+    .submit-btn,
+    .btn-icon {
+        transition: none;
+    }
+}
 
 
