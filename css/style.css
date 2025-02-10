@@ -342,6 +342,20 @@ section {
 }
 
 #header aside {
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    padding-top:3px;
+    padding-right: 5px;
+}
+
+#header aside .social-icons {
+    margin-top: 0;
+    padding-top: 6px;
+}
+
+#header aside {
     text-align: right;
 }
 
@@ -642,8 +656,8 @@ nav#nav-mobile ul {
     position: absolute;
     left: 0;
     right: 0;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -80px;
+    margin-right: -80px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
@@ -656,7 +670,7 @@ nav#nav-mobile ul:after {
 }
 
 nav#nav-mobile li {
-    margin: 0 20px;
+    margin: 0 10px;
     float: none;
     text-align: left;
     border-bottom: 1px solid #e1e1e1;
@@ -2207,7 +2221,7 @@ blockquote {
 
 /* =Media Queries for Nav
 ===============================*/
-@media all and (max-width: 1024px) {
+@media all and (max-width: 800px) {
     #nav-trigger {
         display: block;
     }
@@ -2353,32 +2367,14 @@ blockquote {
         padding: 0 !important;
     }
 
-    #header aside {
-        display: inline-block;
-        position: absolute;
-        top: 40px;
-        right: 60px;
-        padding-top:3px;
-        padding-right: 5px;
-    }
-
-    #header.nav-solid aside {
-        top: 20px;
-    }
-
-    #header aside ul {
-        margin-top: 0 !important;
-        padding-top: 6px;
-    }
-
     #banner-content.row {
         padding-top: 85px !important;
     }
 
     /*Navigation*/
     nav#nav-mobile ul {
-        margin-left: -40px;
-        margin-right: -40px;
+        margin-left: -120px;
+        margin-right: -80px;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -2442,7 +2438,7 @@ blockquote {
     /*Navigation*/
     nav#nav-mobile ul {
         margin-left: -40px;
-        margin-right: -40px;
+        margin-right: -80px;
         padding-left: 20px;
         padding-right: 20px;
     }
