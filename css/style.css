@@ -955,12 +955,14 @@ h6 {
 
 /* --------- 6.1 Introduction ---------- */
 
-#services{
+#services {
     background: url('../images/banner-images/banner-image-1.png') no-repeat center center;
     background-size: cover;
     color: white; /* Ensures text is readable */
     padding: 80px 0; /* Adjust spacing */
     position: relative; /* Keeps positioning intact */
+
+}
 
 .introduction img.featured {
     padding: 55px 0 0 0;
