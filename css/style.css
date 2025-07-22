@@ -955,7 +955,7 @@ h6 {
 
 /* --------- 6.1 Introduction ---------- */
 
-#services {
+#introduction {
     background: url('../images/banner-images/banner-image-1.png') no-repeat center center;
     background-size: cover;
     color: white; /* Ensures text is readable */
