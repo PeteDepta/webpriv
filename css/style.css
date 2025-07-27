@@ -815,7 +815,7 @@ h6 {
 .section-heading h3 {
     font-size: 14px;
     font-weight: bold;
-    color: #ccc;
+    color: #00964D;
     letter-spacing: 2px;
     padding-bottom: 0;
 }
@@ -964,7 +964,7 @@ h6 {
 #services {
     background: url('../images/banner-images/banner-image-2.png') no-repeat center center;
     background-size: cover;
-    color: rgb(228, 63, 63); /* Ensures text is readable */
+    color: white; /* Ensures text is readable */
     padding: 80px 0; /* Adjust spacing */
     position: relative; /* Keeps positioning intact */
 }
