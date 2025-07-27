@@ -977,6 +977,15 @@ h6 {
 .features div:nth-child(4) {
     clear: both;
 }
+/*----------- ABOUT -----------*/
+
+#about {
+    background: url('../images/banner-images/banner-image-3.png') no-repeat center center;
+    background-size: cover;
+    color: #999; /* Ensures text is readable */
+    padding: 80px 0; /* Adjust spacing */
+    position: relative; /* Keeps positioning intact */
+}
 
 /* --------- 6.3 Testimonials ---------- */
 
