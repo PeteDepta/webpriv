@@ -1047,7 +1047,12 @@ blockquote {
 /* --------- 6.4 Gallery ---------- */
 
 #gallery img {
+    width: 100%;
+    height: auto;
     max-height: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s linear;
 }
 
 #gallery [class*='col-'] {
@@ -1055,6 +1060,7 @@ blockquote {
 }
 
 #gallery a {
+    padding: 5px;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -1063,6 +1069,7 @@ blockquote {
 #gallery a:hover img {
     opacity: 0.15;
     -moz-backface-visibility: hidden;
+    transform: scale(1.05);
 }
 
 #gallery a:before {
@@ -1093,254 +1100,168 @@ blockquote {
     left: 50%;
 }
 
-/**
- * Featherlight – ultra slim jQuery lightbox
- * Version 1.3.3 - http://noelboss.github.io/featherlight/
- *
- * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
- * MIT Licensed.
-**/
-@media all {
-    .featherlight {
-        display: none;
 
-        /* dimensions: spanning the background from edge to edge */
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 2147483647; /* z-index needs to be >= elements on the site. */
-
-        /* position: centering content */
-        text-align: center;
-
-        /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
-        white-space: nowrap;
-
-        /* styling */
-        cursor: pointer;
-        background: #333;
-        /* IE8 "hack" for nested featherlights */
-        background: rgba(0, 0, 0, 0);
-    }
-
-    /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
-    .featherlight:last-of-type {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    .featherlight:before {
-        /* position: trick to center content vertically */
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-        margin-right: -0.25em;
-    }
-
-    .featherlight .featherlight-content {
-
-        /* position: centering vertical and horizontal */
-        text-align: left;
-        vertical-align: middle;
-        display: inline-block;
-
-        /* dimensions: cut off images */
-        overflow: auto;
-        padding: 25px 0;
-        border-bottom: 25px solid transparent;
-
-        /* dimensions: handling small or empty content */
-        min-width: 30%;
-
-        /* dimensions: handling large content */
-        margin-left: 5%;
-        margin-right: 5%;
-        max-height: 95%;
-
-        /* styling */
-        cursor: auto;
-
-        /* reset white-space wrapping */
-        white-space: normal;
-    }
-
-    /* contains the content */
-    .featherlight .featherlight-inner {
-        /* make sure its visible */
-        display: block;
-    }
-
-    .featherlight .featherlight-close-icon {
-        /* position: centering vertical and horizontal */
-        position: absolute;
-        z-index: 9999;
-        top: 25px;
-        right: 25px;
-
-        /* dimensions: 25px x 25px */
-        line-height: 25px;
-        width: 25px;
-
-        /* styling */
-        cursor: pointer;
-        text-align: center;
-        color: #fff;
-        font-family: "fontawesome", sans-serif;
-        font-size: 22px;
-        opacity: 0.5;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
-    }
-
-    .featherlight .featherlight-close-icon:hover {
-        opacity: 1;
-    }
-
-    .featherlight .featherlight-image {
-        /* styling */
-        max-height: 100%;
-        max-width:100%;
-    }
-
-    .featherlight-iframe .featherlight-content {
-        /* removed the border for image croping since iframe is edge to edge */
-        border-bottom: 0;
-        padding: 0;
-    }
-
-    .featherlight iframe {
-        /* styling */
-        border: none;
-    }
+/* --- NEW RESPONSIVE STYLES FOR FEATHERLIGHT --- */
+.featherlight {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 2147483647;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.8);
 }
 
-/* handling phones and small screens */
-@media only screen and (max-width: 1024px) {
-    .featherlight .featherlight-content {
-        /* dimensions: maximize lightbox with for small screens */
-        margin-left: 10px;
-        margin-right: 10px;
-        max-height: 98%;
-
-        padding: 10px 10px 0;
-        border-bottom: 10px solid transparent;
-    }
-
+.featherlight:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
 }
 
-/* Gallery Styling */
-@media all {
-    .featherlight-next,
-    .featherlight-previous {
-        font-family: "fontawesome", sans-serif;
-        font-size: 22px;
-        display: block;
-        position: absolute;
-        top: 25px;
-        right: 0;
-        bottom: 0;
-        left: 80%;
-        cursor: pointer;
-        /* preventing text selection */
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        /* IE9 hack, otherwise navigation doesn't appear */
-        background: rgba(0, 0, 0, 0);
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
-    }
+.featherlight .featherlight-content {
+    display: inline-flex;
+    flex-direction: column;
 
-    .featherlight-previous {
-        left: 0;
-        right: 80%;
-    }
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    cursor: auto;
 
-    .featherlight-next span,
-    .featherlight-previous span {
-        display: inline-block;
-        opacity: 0.3;
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        font-size: 80px;
-        line-height: 80px;
+    background: #fff;
+    padding: 0;
 
-        /* center vertically */
-        margin-top: -40px;
-        color: #fff;
-        font-style: normal;
-        font-weight: normal;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
-    }
-
-    .featherlight-next span {
-        text-align: right;
-        left: auto;
-        right: 7%;
-    }
-
-    .featherlight-previous span {
-        text-align: left;
-        left: 7%;
-    }
-
-    .featherlight-next:hover span,
-    .featherlight-previous:hover span {
-        display: inline-block;
-        opacity: 1;
-    }
-
-    /* Hide navigation while loading */
-    .featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
-        display: none;
-    }
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-/* Always display arrows on touch devices */
-@media only screen and (max-device-width: 1024px) {
-    .featherlight-next:hover,
-    .featherlight-previous:hover {
-        background: none;
-    }
-
-    .featherlight-next span,
-    .featherlight-previous span {
-        display: block;
-    }
+.featherlight .featherlight-inner {
+    display: block;
 }
 
-/* handling phones and small screens */
-@media only screen and (max-width: 1024px) {
-    .featherlight-next,
-    .featherlight-previous {
-        top: 10px;
-        right: 10px;
-        left: 85%;
-    }
+.featherlight .featherlight-image {
+    order: 1;
+    width: 100%;
+    height: auto;
+}
 
-    .featherlight-previous {
-        left: 10px;
-        right: 85%;
-    }
+.featherlight-description {
+    order: 2;
+    padding: 25px;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    .featherlight-next span,
-    .featherlight-previous span {
-        margin-top: -30px;
-        font-size: 40px;
-    }
+.featherlight-description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featherlight-description ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.featherlight-description ul li i {
+    margin-right: 15px;
+    color: #007bff;
+    width: 20px;
+    text-align: center;
+}
+
+.featherlight-description .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.featherlight .featherlight-close-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    right: 15px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+    color: #000;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font-family: "fontawesome", sans-serif;
+    font-size: 22px;
+}
+/* --- NEW RESPONSIVE STYLES --- */
+
+
+/* --- Gallery Navigation Arrows --- */
+.featherlight-next,
+.featherlight-previous {
+    font-family: "fontawesome", sans-serif;
+    font-size: 22px;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background: transparent;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.featherlight-previous {
+    left: 0;
+}
+.featherlight-next {
+    right: 0;
+}
+
+.featherlight-next span,
+.featherlight-previous span {
+    display: inline-block;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    font-size: 60px;
+    line-height: 60px;
+    margin-top: -30px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    transition: all 0.3s ease-out;
+}
+
+.featherlight-next span {
+    right: 25px;
+}
+
+.featherlight-previous span {
+    left: 25px;
+}
+
+.featherlight-next:hover span,
+.featherlight-previous:hover span {
+    opacity: 1;
+}
+
+/* Hide navigation while loading */
+.featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
+    display: none;
 }
 
 /* --------- 6.5 Video ---------- */
