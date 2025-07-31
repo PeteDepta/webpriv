@@ -16,7 +16,7 @@ $(document).ready(function(){
             '<li><i class="fa fa-bed"></i> Rooms: ' + rooms + '</li>' +
             '<li><i class="fa fa-bath"></i> Bathrooms: ' + bathrooms + '</li>' +
             '<li><i class="fa fa-arrows-alt"></i> m2: ' + size + '</li>' +
-            '<li><i class="fa fa-info"></i> m2: ' + info + '</li>' +
+            '<li><i class="fa fa-info"></i> information: ' + info + '</li>' +
             '</ul>' +
             '<div class="price">Price from: ' + price + '</div>' +
             '</div>';
