@@ -7,7 +7,7 @@ $(document).ready(function(){
         var bathrooms = this.$currentTarget.data('bathrooms');
         var size = this.$currentTarget.data('size');
         var price = this.$currentTarget.data('price');
-        var description = this.$currentTarget.data('description');
+        var info = this.$currentTarget.data('info');
 
         var descriptionHtml =
             '<div class="featherlight-description">' +
@@ -16,7 +16,7 @@ $(document).ready(function(){
             '<li><i class="fa fa-bed"></i> Rooms: ' + rooms + '</li>' +
             '<li><i class="fa fa-bath"></i> Bathrooms: ' + bathrooms + '</li>' +
             '<li><i class="fa fa-arrows-alt"></i> m2: ' + size + '</li>' +
-            '<li><i class="fa fa-arrows-alt"></i> m2: ' + description + '</li>' +
+            '<li><i class="fa fa-info"></i> m2: ' + info + '</li>' +
             '</ul>' +
             '<div class="price">Price from: ' + price + '</div>' +
             '</div>';
