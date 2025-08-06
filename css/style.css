@@ -1186,6 +1186,35 @@ blockquote {
     border-top: 1px solid #eee;
 }
 
+.apartment-thumbnails {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.apartment-thumbnail {
+    width: 80px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.apartment-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.apartment-thumbnail.active {
+    border-color: #00964D;
+}
+
 .featherlight .featherlight-close-icon {
     position: absolute;
     z-index: 9999;
