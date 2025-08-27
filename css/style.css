@@ -377,6 +377,22 @@ section {
     padding: 16px;
 }
 
+/* --------- translation switch -------- */
+
+#language-switcher {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+#language-switcher img {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ddd;
+}
+
 /* --------- 2.2 Logo ---------- */
 
 #logo {
