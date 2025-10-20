@@ -4,10 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLanguage = localStorage.getItem('language') || 'en';
     let translations = {};
 
+    window.i18n = window.i18n || {};
+
+    function t(key) {
+        if (translations[currentLanguage] && translations[currentLanguage][key]) return translations[currentLanguage][key];
+        if (translations.en && translations.en[key]) return translations.en[key];
+        return key;
+    }
+
     async function fetchTranslations() {
         const response = await fetch('translations.json');
         translations = await response.json();
         setLanguage(currentLanguage);
+        if (typeof window.i18n.onReady === 'function') {
+            window.i18n.onReady();
+        }
     }
 
     function setLanguage(lang) {
@@ -23,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateTextContent(lang);
+        document.dispatchEvent(new CustomEvent('i18n:languageChanged', { detail: { lang } }));
     }
 
     function updateTextContent(lang) {
@@ -32,8 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.innerHTML = translations[lang][key];
             }
         });
-        document.title = translations[lang].pageTitle;
+        if (translations[lang] && translations[lang].pageTitle) {
+            document.title = translations[lang].pageTitle;
+        }
     }
+
+    window.i18n.applyTranslations = function() { updateTextContent(currentLanguage); };
+    window.i18n.setLanguage = function(lang) { setLanguage(lang); };
+    window.i18n.t = function(key) { return t(key); };
+    Object.defineProperty(window.i18n, 'lang', { get: function() { return currentLanguage; } });
 
     languageSwitcher.addEventListener('click', (e) => {
         e.stopPropagation();

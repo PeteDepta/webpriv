@@ -1621,9 +1621,6 @@ blockquote {
 }
 
 .price span {
-    position: absolute;
-    top: 0;
-    left: -20px;
     font-size: 22px;
 }
 
@@ -1632,6 +1629,53 @@ blockquote {
     color:#b4b4b4;
     margin:0;
 }
+
+.featherlight .info-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.featherlight .info-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.featherlight .info-chip i,
+.featherlight .info-chip svg {
+    margin-right: 6px;
+}
+
+.featherlight .info-chip:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+/* Keyboard focus for accessibility */
+.featherlight .info-chip:focus-visible {
+    outline: 2px solid #94a3b8;
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .featherlight .info-chips {
+        gap: 6px;
+    }
+    .featherlight .info-chip {
+        font-size: 0.85rem;
+        padding: 6px 9px;
+    }
+}
+
 
 
 
@@ -2469,5 +2513,3 @@ blockquote {
         transition: none;
     }
 }
-
-

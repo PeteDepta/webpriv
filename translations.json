@@ -42,7 +42,13 @@
     "contactTitle": "Contact Us",
     "emailTitle": "Email",
     "phoneTitle": "Phone / WhatsApp",
-    "copyright": "© 2025 Emerald Shores Ltd. All rights reserved."
+    "copyright": "© 2025 Emerald Shores Ltd. All rights reserved.",
+    "flLocationLabel": "Location",
+    "flRoomsLabel": "Rooms",
+    "flBathroomsLabel": "Bathrooms",
+    "flAreaLabel": "Area (m²)",
+    "flInformationLabel": "Information",
+    "flPriceFrom": "Price from"
   },
   "pl": {
     "pageTitle": "EMERALD SHORES - Najlepsze nieruchomości na Phuket",
@@ -87,6 +93,12 @@
     "contactTitle": "Skontaktuj się z nami",
     "emailTitle": "Email",
     "phoneTitle": "Telefon / WhatsApp",
-    "copyright": "© 2025 Emerald Shores Ltd. Wszelkie prawa zastrzeżone."
+    "copyright": "© 2025 Emerald Shores Ltd. Wszelkie prawa zastrzeżone.",
+    "flLocationLabel": "Lokalizacja",
+    "flRoomsLabel": "Pokoje",
+    "flBathroomsLabel": "Łazienki",
+    "flAreaLabel": "Powierzchnia (m²)",
+    "flInformationLabel": "Informacje",
+    "flPriceFrom": "Cena od"
   }
 }
